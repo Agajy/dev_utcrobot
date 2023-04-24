@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import os
+import sys
 import launch
 import yaml
 from ament_index_python.packages import get_package_share_directory
@@ -29,11 +30,13 @@ from lifecycle_msgs.msg import Transition
 
 def generate_launch_description():
 
+    configFileName = sys.argv[1]
+
     # パラメータファイルのパス設定
     config_file_path = os.path.join(
         get_package_share_directory('urg_node2'),
         'config',
-        'params_serial.yaml'
+        configFileName
     )
 
     # パラメータファイルのロード
