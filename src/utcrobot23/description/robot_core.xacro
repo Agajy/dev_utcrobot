@@ -53,7 +53,7 @@
             </geometry>
         </collision>
         <xacro:inertial_box mass="0.5" x="0.140" y="0.320" z="0.0455">
-            <origin xyz="0.004 0.001 0.051" rpy="0 0 0"/>
+            <origin xyz="0.0 0.0 0.007" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
 
@@ -81,9 +81,9 @@
                 <sphere radius="0.034"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass="0.1" length="0.0254" radius="0.034">
-            <origin xyz="0 0 0.0425" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
+        <xacro:inertial_sphere mass="0.1" radius="0.034" >
+            <origin xyz="0 0.1016 0.0425" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
     </link>
 
     <gazebo reference="left_wheel">
@@ -110,9 +110,9 @@
                 <sphere radius="0.034"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass="0.1" length="0.0254" radius="0.034">
-            <origin xyz="0 0 0.00425" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
+        <xacro:inertial_sphere mass="0.1" radius="0.034" >
+            <origin xyz="0 -0.1016 0.00425" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
     </link>
 
     <gazebo reference="right_wheel">
@@ -145,8 +145,8 @@
 
     <gazebo reference="caster_wheel">
         <material>Gazebo/Black</material>
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
+        <mu1 value="0.05"/>
+        <mu2 value="0.05"/>
 
     </gazebo>
 
