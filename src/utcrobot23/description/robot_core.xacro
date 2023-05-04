@@ -30,6 +30,16 @@
 
     </link>
 
+    <!-- BASE_FOOTPRINT LINK -->
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_footprint">
+    </link>
+
 
     <!--  CHASSIS LINK  -->
     <joint name="chassis_joint" type="fixed">
@@ -49,11 +59,11 @@
         <collision>
             <origin xyz="0 0 0.007"/>
             <geometry>
-                <box size="0.140 0.320 0.0455"/>
+                <box size="0.140 0.200 0.0455"/>
             </geometry>
         </collision>
         <xacro:inertial_box mass="0.5" x="0.140" y="0.320" z="0.0455">
-            <origin xyz="0.0 0.0 0.007" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
 
@@ -82,7 +92,7 @@
             </geometry>
         </collision>
         <xacro:inertial_sphere mass="0.1" radius="0.034" >
-            <origin xyz="0 0.1016 0.0425" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
 
@@ -111,7 +121,7 @@
             </geometry>
         </collision>
         <xacro:inertial_sphere mass="0.1" radius="0.034" >
-            <origin xyz="0 -0.1016 0.00425" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
 
@@ -139,22 +149,22 @@
             </geometry>
         </collision>
         <xacro:inertial_sphere mass="0.01" radius="0.007">
-            <origin xyz="0.05 0 -0.023" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
 
     <gazebo reference="caster_wheel">
         <material>Gazebo/Black</material>
-        <mu1 value="0.05"/>
-        <mu2 value="0.05"/>
+        <mu1 value="0.0"/>
+        <mu2 value="0.0"/>
 
     </gazebo>
 
-        <!--  CASTER WHEEL LINK
+        <!--  CASTER WHEEL LINK >
     <joint name="caster_wheel_joint2" type="fixed">
         <parent link="chassis"/>
         <child link="caster_wheel2"/>
-        <origin xyz="0.1 0 -0.023"/>
+        <origin xyz="-0.05 0 -0.023"/>
     </joint>
 
     <link name="caster_wheel2">
@@ -176,10 +186,10 @@
 
     <gazebo reference="caster_wheel2">
         <material>Gazebo/Black</material>
-        <mu1 value="0.001"/>
-        <mu2 value="0.001"/>
+        <mu1 value="0.0"/>
+        <mu2 value="0.0"/>
 
-    </gazebo>-->
+    </gazebo-->
 
 
 </robot>
