@@ -1,0 +1,5 @@
+<library path="waypoint_plugin">
+    <class name= "waypoint/ExecuteTaskAtWaypoint" type="waypoint::ExecuteTaskAtWaypoint" base_class_type="nav2_core::WaypointTaskExecutor">
+        <description>Execute specific task when robot arrives at waypoint</description>
+    </class>
+</library>

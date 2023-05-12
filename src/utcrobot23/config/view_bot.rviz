@@ -14,6 +14,10 @@ Panels:
         - /LaserScan1/Status1
         - /Map1
         - /Map1/Status1
+        - /Map1/Topic1
+        - /Map2
+        - /Map2/Topic1
+        - /Map2/Update Topic1
       Splitter Ratio: 0.5
     Tree Height: 1315
   - Class: rviz_common/Selection
@@ -27,6 +31,7 @@ Panels:
   - Class: rviz_common/Views
     Expanded:
       - /Current View1
+      - /Current View1/Focal Point1
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz_common/Time
@@ -53,7 +58,7 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: base_link
+      Reference Frame: map
       Value: true
     - Class: rviz_default_plugins/TF
       Enabled: true
@@ -85,19 +90,20 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          odom:
-            base_link:
-              base_footprint:
+          {}
+        odom:
+          base_link:
+            base_footprint:
+              {}
+            chassis:
+              caster_wheel:
                 {}
-              chassis:
-                caster_wheel:
-                  {}
-                laser_frame:
-                  {}
-                left_wheel:
-                  {}
-                right_wheel:
-                  {}
+              laser_frame:
+                {}
+              left_wheel:
+                {}
+              right_wheel:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -201,7 +207,7 @@ Visualization Manager:
       Name: Map
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
@@ -214,10 +220,31 @@ Visualization Manager:
         Value: /map_updates
       Use Timestamp: false
       Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz_default_plugins/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /global_costmap/costmap
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /global_costmap/costmap_updates
+      Use Timestamp: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -259,21 +286,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
-      Class: rviz_default_plugins/TopDownOrtho
+      Class: rviz_default_plugins/XYOrbit
+      Distance: 2.5411126613616943
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: 0.16802115738391876
+        Y: -0.7618990540504456
+        Z: 0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 80.69254302978516
+      Pitch: 1.1997966766357422
       Target Frame: <Fixed Frame>
-      Value: TopDownOrtho (rviz_default_plugins)
-      X: -6.319408893585205
-      Y: -5.006852626800537
+      Value: XYOrbit (rviz_default_plugins)
+      Yaw: 4.3323869705200195
     Saved: ~
 Window Geometry:
   Displays:
