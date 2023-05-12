@@ -15,5 +15,6 @@
     </xacro:unless>
     
     <xacro:include filename="lidar.xacro"/>
+    <xacro:include filename="lidar_2nd.xacro"/>
 
 </robot>
