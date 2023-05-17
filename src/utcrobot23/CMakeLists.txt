@@ -37,4 +37,11 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install Python executables
+install(PROGRAMS
+  launch/nav_through_poses.py
+  launch/robot_navigator.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
